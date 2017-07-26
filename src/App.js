@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FACE_SHAPE, FACE_HAIR } from './constants/index';
-import { FacePreview } from './FacePreview/FacePreview';
+import { FacePreview } from './FacePreview';
+import { FaceDashboard } from './FaceDashboard';
 
 import './App.css';
 
@@ -17,7 +18,7 @@ class App extends Component {
                     <FacePreview config={config} />
                 </div>
                 <div className="App__FaceDashboard">
-
+                    <FaceDashboard />
                 </div>
             </div>
         );
