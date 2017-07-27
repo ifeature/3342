@@ -6,6 +6,7 @@ import { FaceBackground } from '../FaceBackground';
 import { FaceShape } from '../FaceShape';
 import { FaceHair } from '../FaceHair';
 import {FACE_SHAPE, FACE_HAIR} from '../constants';
+import { wire } from '../di';
 
 function buildFace(builder) {
     builder.buildFace();
@@ -20,6 +21,7 @@ function buildFace(builder) {
 function FacePreview({ config }) {
     const builder = new FaceBuilder(Object.assign({}, FacePreview.defaultProps, config));
     const { data: { faceShape, faceHair } } = buildFace(builder);
+    console.log('update?')
 
     return (
         <article className="FacePreview">
@@ -57,4 +59,13 @@ FacePreview.defaultProps = {
     faceHair: FACE_HAIR.SHORT
 };
 
-export {FacePreview};
+const wired = wire(FacePreview, ['faceHair', 'faceShape'], function(faceHair, faceShape) {
+    return {
+        config: {
+            faceHair,
+            faceShape
+        }
+    };
+});
+
+export { wired as FacePreview };

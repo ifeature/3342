@@ -8,4 +8,4 @@ const FACE_HAIR = {
     MEDIUM: 'MEDIUM'
 };
 
-export {FACE_SHAPE, FACE_HAIR};
+export { FACE_SHAPE, FACE_HAIR };

@@ -8,6 +8,7 @@ class Tabs extends PureComponent {
         super(props, context);
         this.state = {
             selectedIndex: SELECTED_INDEX_DEFAULT,
+            tabValue: null,
             currentTemplate: null
         };
         this.handleTabClick = this.handleTabClick.bind(this);
@@ -23,6 +24,7 @@ class Tabs extends PureComponent {
         const tabs = React.Children.map(this.props.children, (tab, index) => {
             if (this.state.selectedIndex === index) {
                 this.state.currentTemplate = tab.props.children;
+                this.state.tabValue = tab.props.value;
             }
             return React.cloneElement(tab, {
                 selected: this.state.selectedIndex === index,
@@ -33,7 +35,7 @@ class Tabs extends PureComponent {
         return (
             <section className="Tabs">
                 { tabs }
-                <TabTemplate>
+                <TabTemplate value={this.state.tabValue}>
                     { this.state.currentTemplate }
                 </TabTemplate>
             </section>

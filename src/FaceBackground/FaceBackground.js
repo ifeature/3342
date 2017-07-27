@@ -1,4 +1,5 @@
 import React from 'react';
+import { Store } from '../store';
 
 const DEFAULT_COLOUR = '#ecf0f1';
 const DEFAULT_IMAGE = 'https://c.tadst.com/gfx/750w/sunrise-sunset-sun-calculator.jpg?1';
@@ -9,12 +10,14 @@ const FILL_TYPE = {
 };
 
 function FaceBackground() {
+    let url;
+    url = Store.get();
     return (
         <g id="svga-group-backs-single" className="">
             <defs>
                 <pattern id="attachedImage" height = "100%" width = "100%"
                          patternContentUnits = "objectBoundingBox">
-                    <image xlinkHref="https://c.tadst.com/gfx/750w/sunrise-sunset-sun-calculator.jpg?1" preserveAspectRatio = "none"
+                    <image xlinkHref={url ? url : DEFAULT_IMAGE} preserveAspectRatio = "none"
                            width = "1" height = "1" />
                 </pattern>
             </defs>

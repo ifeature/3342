@@ -36,3 +36,12 @@
         transform: rotate(360deg);
     }
 }
+
+.TabTemplate {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FaceHairIcon {
+    width: 25%;
+}
