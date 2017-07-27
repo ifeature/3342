@@ -3,7 +3,7 @@ import { FACE_HAIR } from './constants';
 import { HAIR_TYPES } from './FaceHairShapes';
 
 function renderFaceHair(type) {
-    return HAIR_TYPES.find(face => face.type === type).DOM;
+    return HAIR_TYPES.find(hair => hair.type === type).preview;
 }
 
 function FaceHair({ type }) {

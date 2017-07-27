@@ -1,6 +1,9 @@
 import React from 'react';
 import { Tabs, Tab } from './components';
+import { FaceHairIcon } from '../FaceHair/FaceHairIcon';
 
+// Preferences component should be created in order to store selected face parts and share this data
+// across FacePreview and FaceDashboard components
 function FaceDashboard() {
     return(
         <article className="FaceDashboard">
@@ -10,7 +13,9 @@ function FaceDashboard() {
                     Tab content - Face shape
                 </Tab>
                 <Tab label="Hair">
-                    Tab content - Hair
+                    {/* row content goes here */}
+                    <FaceHairIcon type={'SHORT'} />
+                    <FaceHairIcon type={'MEDIUM'} />
                 </Tab>
             </Tabs>
         </article>
