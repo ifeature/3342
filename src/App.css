@@ -42,6 +42,7 @@
     flex-wrap: wrap;
 }
 
-.FaceHairIcon {
+.FaceHairIcon,
+.FaceShapeIcon {
     width: 25%;
 }

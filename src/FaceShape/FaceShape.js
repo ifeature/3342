@@ -3,7 +3,7 @@ import { FACE_SHAPE } from './constants';
 import { FACE_SHAPES } from './FaceShapes';
 
 function renderFaceShape(type) {
-    return FACE_SHAPES.find(face => face.type === type).DOM;
+    return FACE_SHAPES.find(face => face.type === type).preview;
 }
 
 function FaceShape({ type }) {
